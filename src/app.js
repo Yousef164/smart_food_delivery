@@ -8,6 +8,7 @@ import branches from "./modules/branchesAddresses/branches.route.js";
 import addresses from "./modules/Addresses/addresses.route.js";
 import orders from "./modules/orders/orders.route.js";
 import cartRoutes from "./modules/cart/cart.route.js";
+import orderItems from "./modules/orderItems/orderItems.route.js";
 import homeRoutes from "./modules/home/home.route.js";
 import {
   errorHandler,
@@ -27,6 +28,7 @@ app.use("/product", products);
 app.use("/branch", branches);
 app.use("/address", addresses);
 app.use("/cart", cartRoutes);
+app.use("/order-items", orderItems);
 app.use("/api/orders", orders);
 
 app.get(

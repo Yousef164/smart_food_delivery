@@ -5,6 +5,7 @@ import Cart from "./Cart.js";
 import BranchAddress from "./BranchAddress.js";
 import Address from "./Address.js";
 import Order from "./Order.js";
+import OrderItem from "./orderItems.js";
 
 Restaurant.hasMany(Product, {
   foreignKey: "restaurantId",
@@ -64,6 +65,24 @@ Product.hasMany(Cart, {
   as: "cartItems",
 });
 Cart.belongsTo(Product, {
+  foreignKey: "productId",
+  as: "product",
+});
+
+Order.hasMany(OrderItem, {
+  foreignKey: "orderId",
+  as: "items",
+});
+OrderItem.belongsTo(Order, {
+  foreignKey: "orderId",
+  as: "order",
+});
+
+Product.hasMany(OrderItem, {
+  foreignKey: "productId",
+  as: "orderItems",
+});
+OrderItem.belongsTo(Product, {
   foreignKey: "productId",
   as: "product",
 });
