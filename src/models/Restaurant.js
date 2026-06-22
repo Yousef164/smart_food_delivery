@@ -2,7 +2,6 @@ import pkg from "sequelize";
 import bcrypt from "bcrypt";
 import sequelize from "../config/database.js";
 
-
 const { DataTypes } = pkg;
 
 const SALT_ROUNDS = 10;
@@ -49,6 +48,7 @@ const Restaurant = sequelize.define(
   },
   {
     timestamps: true,
+    tableName: "restaurants",
     hooks: {
       beforeCreate: async (restaurant) => {
         if (restaurant.password) {

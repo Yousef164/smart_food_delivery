@@ -15,7 +15,7 @@ const Product = sequelize.define(
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: "Restaurants",
+        model: "restaurants",
         key: "id",
       },
       onDelete: "CASCADE",
@@ -39,7 +39,7 @@ const Product = sequelize.define(
     },
     catgory: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     isAvailable: {
       type: DataTypes.BOOLEAN,
@@ -48,6 +48,7 @@ const Product = sequelize.define(
   },
   {
     timestamps: true,
+    tableName: "products",
   },
 );
 

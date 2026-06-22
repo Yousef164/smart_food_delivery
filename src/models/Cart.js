@@ -25,7 +25,7 @@ const Cart = sequelize.define(
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: "Products",
+        model: "products",
         key: "id",
       },
       onDelete: "CASCADE",

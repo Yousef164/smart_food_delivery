@@ -15,7 +15,7 @@ const BranchAddress = sequelize.define(
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: "Restaurants",
+        model: "restaurants",
         key: "id",
       },
       onDelete: "CASCADE",
@@ -40,7 +40,7 @@ const BranchAddress = sequelize.define(
   },
   {
     timestamps: true,
-    tableName: "BranchAddress"
+    tableName: "BranchAddress",
   },
 );
 
